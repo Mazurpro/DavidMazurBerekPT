@@ -1,0 +1,20 @@
+﻿@model DavidMazurBerek.Models.Persona
+
+@{
+    ViewData["Title"] = "Eliminar Persona";
+}
+
+<h2>Eliminar Persona</h2>
+
+<h3>¿Está seguro de que quiere eliminar a esta persona?</h3>
+<div>
+    <h4>@Model.Nombre @Model.Apellidos</h4>
+    <p>@Model.Direccion1</p>
+    <p>@Model.Direccion2</p>
+</div>
+
+<form asp-action="Eliminar" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Eliminar" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
